@@ -41,12 +41,13 @@
                     <ul>
                         <li>
                             <p>文件路径约定：js文件统一存放成<code>static/js</code>, project以js下顶级文件夹形式存放</p>
+                            <p></p>
                             <pre class="prettyprint linenums">
                                 <code>
 --static
     --js
         --common //即目前的commonjs
-            qload.js 
+            jquery.scrollup.js 
         --index
             main.js 
                                 </code>
@@ -54,23 +55,44 @@
                         </li> 
                         <li>
                             <p>ngix配置约定：即可以通过<code>http://domain/js/path/to/file</code>这样访问</p>
+                            <p>如：<code>http://www.qmodular.org/js/common/jquery.scrollup.js</code>访问上面例子中的qload文件</p>
                             <pre class="prettyprint linenums">
                                 <code>
 location ~* \.(js|css)$ {
     root           ${PRJ_ROOT}/src/web_inf/${APP_SYS}/static;
-    index index.html ;
+    index index.html 
     expires 1h;
 }
                                 </code>
                             </pre>
+                        </li>
+                        <li>
+                            <p>所加载文件必须是符合CMD模块规范的js文件</p>
+                            <p>这就要求，如果本来是jquery，jquery插件等不符合CMD模块规范的文件，要改造为CDM模块</p>
+                            <pre class="prettyprint linenums">
+                                <code>
+define(function(require, exports, module) {
+    // jQuery code
+});   
+                                </code>
+                            </pre>                        
                         </li> 
                         <li>
-                            <p>模块标志都省略.js后缀。如：<code>seajs.use('common/qtool')</code></p>
-                            <div class="qm-notify qm-notify-info">
-                                <h4>这是说明标题</h4>
-                                <p>这是说明内容</p>
-                            </div>
+                            <p>模块都为写为匿名模块</p>
+                            <pre class="prettyprint linenums">
+                                <code>
+define(function(require, exports, module) {
+    exports.log = function(msg) {
+        console.log(msg);
+    }
+});
+                                </code>
+                            </pre>
                         </li>
+                        <div class="qm-notify qm-notify-info">
+                            <h4></h4>
+                            <p>这是说明内容</p>
+                        </div>
                     </ul>
                     <h3 id="method">使用方法：</h3>
                     <ol>
@@ -86,6 +108,13 @@ location ~* \.(js|css)$ {
                             <p><pre class="prettyprint"><code>seajs.use('index/main');</code></pre></p>
                         </li>
                     </ol>
+                </div> 
+
+                <div class="best-practice qm-docs-section">
+                    <h1 class="section-header" id="why">最佳实践</h1> 
+                    <ul>
+                        <li>jQuery这种各处使用的js，通过<code>script:src`</code></li>
+                    </ul>
                 </div>
 
                 <div class="other-docs qm-docs-section"> 
