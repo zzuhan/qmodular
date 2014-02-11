@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>QStatic modular项目简介</title>
+
+<link rel="stylesheet" href="static/css/bootstrap.css" />
+<link rel="stylesheet" href="static/css/docs.css" />
+<link rel="stylesheet" href="static/css/pretty-code.css" />
+</head>
+<body>
+    <?php include('nav.html') ?>
+    <!-- temp remove include('nav.html') -->
+    <div class="container qm-docs-container">
+        <div class="row">
+            <!-- left col-->
+            <div class="col-md-9">
+               
+                <div class="why qm-docs-section">
+                    <h1 class="section-header" id="why">为什么使用</h1> 
+                    <p>随着前端功能，效果越来越复杂，代码越来越重，
+                    实现模块化，已成必然趋势</p>
+                </div>
+
+                <div class="howto qm-docs-section">
+                    <h1 class="section-header" id="howto">如何使用</h1> 
+                    <p>模块化功能加入之初考虑的就是，如何能像目前静床那样，项目上线只需执行一个deploy(一般加入到f8的init.sh脚本中)无需再做任何改动。
+                    很高兴告诉你，我们实现了，上线时仍然只需要执行静床的deploy, 背后会判断是否是模块化项目进行相应的修改(将匿名模块具名，分析依赖)。</p>
+                    <h3 id="convention">使用约定：</h3>
+                    <ul>
+                        <li>
+                            <p>文件路径约定：js文件统一存放成<code>static/js</code>, project以js下顶级文件夹形式存放</p>
+                            <pre class="prettyprint linenums">
+                                <code>
+--static
+    --js
+        --common //即目前的commonjs
+            qload.js 
+        --index
+            main.js 
+                                </code>
+                            </pre>
+                        </li> 
+                        <li>
+                            <p>ngix配置约定：即可以通过<code>http://domain/js/path/to/file</code>这样访问</p>
+                            <pre class="prettyprint linenums">
+                                <code>
+location ~* \.(js|css)$ {
+    root           ${PRJ_ROOT}/src/web_inf/${APP_SYS}/static;
+    index index.html ;
+    expires 1h;
+}
+                                </code>
+                            </pre>
+                        </li> 
+                        <li>
+                            <p>模块标志都省略.js后缀。如：<code>seajs.use('common/qtool')</code></p>
+                            <div class="qm-notify qm-notify-info">
+                                <h4>这是说明标题</h4>
+                                <p>这是说明内容</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3 id="method">使用方法：</h3>
+                    <ol>
+                        <li>
+                            <p>跟过去一致的无差别引入静床，在拦截器实例化静床</p> 
+                        </li>
+                        <li>
+                            <p>页面模板中，在模块化使用之前，加载模块化配置文件</p>
+                            <p><pre class="prettyprint"><code>$qstatic->addModularConf();</code></pre></p>
+                        </li>
+                        <li>
+                            <p>加载启动模块</p>
+                            <p><pre class="prettyprint"><code>seajs.use('index/main');</code></pre></p>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="other-docs qm-docs-section"> 
+                    <h1 class="section-header" id="other-docs">
+                       其它文档
+                    </h1>
+                    <p>静床，以及静床模块化相关的文档</p>
+                    <h3 id="qstatic-docs">静床基础文档</h3>
+                    <ul>
+                        <li><a href="http://wiki.1360.com/pages/viewpage.action?pageId=4819303" target="_blank">静床服务</a>
+                        </li>
+                        <li><a href="http://wiki.1360.com/pages/viewpage.action?pageId=4819334" target="_blank">静床使用指南</a></li>
+                        <li><a href="http://wiki.1360.com/pages/viewpage.action?pageId=23461894" target="_blank">静床公共类库托管计划</a></li>
+                        <li><a href="http://wiki.1360.com/pages/viewpage.action?pageId=7503972">Pylon下搭建Qstatic</a></li>
+                    </ul>
+                    <h3 id="qmodular-docs">静床模块化文档</h3>
+                    <ul>
+                        <li><a href="http://wiki.1360.com/pages/viewpage.action?pageId=92979950">静床模块化服务</a></li>
+                    </ul>
+                    <h3 id="seajs-docs">Seajs文档</h3>
+                    <ul>
+                        <li>
+                            <a href="https://github.com/seajs/seajs/issues/258">seajs模块标记</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/seajs/seajs/issues/266">seajs API</a>
+                        </li>                        
+                        <li>
+                            <a href="https://github.com/seajs/seajs/issues/971">如何改造现有文件为CMD模块</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /left col-->
+            <!-- right col -->
+            <div class="col-md-3">
+                <div id="qm-docs-nav" class="qm-sidebar bs-sidebar">
+                    <ul class="nav">
+                        <li>
+                            <a href="#why">为什么使用</a>
+                        </li>
+                        <li>
+                            <a href="#howto">如何使用</a>
+                            <ul class="nav">
+                                <li><a href="#convention">使用约定</a></li>
+                                <li><a href="#method">使用方法</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#other-docs">其它文档</a>
+                            <ul class="nav">
+                                <li><a href="#qstatic-docs">静床文档</a></li>
+                                <li><a href="#qmodular-docs">静床模块化文档</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <!-- /right col -->
+        </div> <!--end row-->
+    </div><!--end docs-->
+<script src="static/js/lib/jquery.js"></script>
+<script src="static/js/lib/sea.js"></script>
+<script src="static/js/config.js"></script>
+<script>
+seajs.use('docs/docs');
+</script>
+</body>
+</html>

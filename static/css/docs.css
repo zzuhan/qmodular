@@ -1,0 +1,71 @@
+@import url('common.css');
+.qm-site-nav { margin-bottom:0 }
+.qm-header {
+  color: #fff;
+  text-align:center;  
+  padding: 40px 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,.4);
+  background: -webkit-lineargradient(45deg, #6182CF, #7FEEFA);
+  background: linear-gradient(45deg, #6182CF, #7FEEFA);
+  /* linear-gradient(45deg, #4CD4C2, #6BB5FF)*/
+}
+.qm-header h1{
+    font-size:120px;
+}
+.qm-header p{
+    font-size:24px;
+    line-height:1.25;
+}
+.qm-docs-section {
+    margin-bottom: 60px;
+}
+.qm-docs-section .section-header {
+    padding-bottom: 9px;
+    margin:40px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+#scrollTop {
+    bottom: 20px;
+    right: 20px;
+    height: 38px;
+    width: 38px;
+    background: url("http://www.bootcss.com/assets/img/top.png") no-repeat;
+}
+/* docs nav */
+#qm-docs-nav .nav .nav {
+    display: none;
+    padding-bottom: 10px;
+}
+#qm-docs-nav .nav a {
+    color: #ccc;
+    padding: 4px 10px;
+}
+#qm-docs-nav .nav .active>a {
+    color: #428bca;
+}
+#qm-docs-nav .nav>.active>.nav {
+    display: block;    
+}
+#qm-docs-nav .nav .nav>li>a {
+    padding-left: 30px;
+}
+.affix-top {
+    position: absolute;
+    top: 100px;
+}
+.affix {
+    top: 100px;
+}
+.qm-notify {
+  background: #eee;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 3px solid #888;
+}
+.qm-notify-info {
+  background-color: #f4f8fa;
+  border-color: #5bc0de;
+}
+.qm-notify-info h4 {
+  color: #5bc0de;
+}

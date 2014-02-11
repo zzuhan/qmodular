@@ -1,0 +1,10 @@
+a:hover, a:focus {
+	color: #428bca;
+}
+#scrollTop {
+    bottom: 20px;
+    right: 20px;
+    height: 38px;
+    width: 38px;
+    background: url("http://www.bootcss.com/assets/img/top.png") no-repeat;
+}

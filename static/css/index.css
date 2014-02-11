@@ -1,0 +1,71 @@
+@import url('common.css');
+.qm-site-nav { margin-bottom:0 }
+.qm-header {
+  color: #fff;
+  text-align:center;  
+  padding: 40px 0;
+  text-shadow: 0 1px 3px rgba(0,0,0,.4);
+  background: -webkit-lineargradient(45deg, #6182CF, #7FEEFA);
+  background: linear-gradient(45deg, #6182CF, #7FEEFA);
+  /* linear-gradient(45deg, #4CD4C2, #6BB5FF)*/
+}
+.qm-header h1{
+    font-size:120px;
+}
+.qm-header p{
+    font-size:24px;
+    line-height:1.25;
+}
+.qm-docs-section {
+    margin-bottom: 60px;
+}
+.qm-docs-section .section-header {
+    padding-bottom: 9px;
+    margin:40px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+.module-gallery { padding: 50px 0;}
+.module-category { 
+  padding-left: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #ccc;
+}
+.category-common {
+  border-left-color: green;
+}
+.module {
+    position: relative;
+    padding: 9px;
+    /*border: 3px solid transparent;*/
+    /*box-shadow: 0 1px 2px #ccc;*/
+}
+.module:hover {
+    background: #eee;
+    /*border: 3px solid #999;*/
+}
+.module .module-name { margin-top: 0; color: #333;}
+.module .module-description { color: #999 ;}
+
+.qm-feature {
+  text-align: center;
+  padding: 30px 0;
+  border-bottom: 1px solid #ccc;
+}
+.qm-feature-title {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+.qm-feature-desc {
+  max-width: 60%;
+  font-size: 21px;
+  margin: 0 auto;
+}
+.qm-feature .fn {
+  text-align: left;
+}
+.qm-feature .fn h3 { font-size: 20px;}
+
+.half-rule {
+  width: 100px;
+  margin: 40px auto;
+}
