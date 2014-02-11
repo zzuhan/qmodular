@@ -50,8 +50,11 @@
     --js
         --common //即目前的commonjs
             jquery.scrollup.js 
-        --index
-            main.js 
+        --docs
+            common.js
+            index.js
+            docs.js
+
                                 </code>
                             </pre>
                         </li> 
@@ -106,8 +109,36 @@ define(function(require, exports, module) {
                             <p><pre class="prettyprint"><code>$qstatic->addModularConf();</code></pre></p>
                         </li>
                         <li>
-                            <p>加载启动模块</p>
-                            <p><pre class="prettyprint"><code>seajs.use('index/main');</code></pre></p>
+                            <p>编写启动文件，加载启动模块</p>
+                            <p>
+                                <pre class="prettyprint">
+                                    <code>
+// index.html
+&lt;script&gt;
+    seajs.use('doc/index');
+&lt;/script&gt;
+                                    </code>
+                                </pre>
+                            </p>
+                            <p>
+                                <pre class="prettyprint">
+                                    <code>
+// filepath static/js/docs/index.js
+define(function(require, exports, module){
+
+    require('jquery.scrollup');
+    $('#scrollTop').scrollUp();
+    
+    var log = require('common/log');
+    log("I'm the qmodular index");
+});
+                                    </code>
+                                </pre>
+                            </p>
+                        </li>
+                        <li>
+                            <p>打包，上线 。</p>
+                            <p><code>f8</code>选择发布qstatic，余下就交给qstatic和其中的qmodular来处理了</p>
                         </li>
                     </ol>
                 </div> 
