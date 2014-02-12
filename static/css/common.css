@@ -8,3 +8,10 @@ a:hover, a:focus {
     width: 38px;
     background: url("../img/top.png") no-repeat;
 }
+#footer {
+	text-align: center;
+	background: #eee;
+	padding: 20px;
+	margin-top: 20px;
+	border-top: 1px solid #ccc;
+}
