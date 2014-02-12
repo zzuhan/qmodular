@@ -24,13 +24,7 @@
     margin:40px 0 20px;
     border-bottom: 1px solid #eee;
 }
-#scrollTop {
-    bottom: 20px;
-    right: 20px;
-    height: 38px;
-    width: 38px;
-    background: url("http://www.bootcss.com/assets/img/top.png") no-repeat;
-}
+
 /* docs nav */
 #qm-docs-nav .nav .nav {
     display: none;
