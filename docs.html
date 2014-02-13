@@ -23,7 +23,7 @@
         </div> 
     </nav>
     <!-- temp remove include('nav.html') -->
-    <div class="container qm-docs-container">
+    <div class="container qm-docs-container" id="qm-docs-container">
         <div class="row">
             <!-- left col-->
             <div class="col-md-9">
@@ -217,7 +217,7 @@ define(function(require, exports, module){
             <!-- /right col -->
         </div> <!--end row-->
     </div><!--end docs-->
-    <div class="ds-thread container"></div>
+    <div class="ds-thread container" data-url="http://www.qmodular.org/docs.html"></div>
     <footer id="footer">
         <p>Copyright©2014 Qihoo and other contributors</p>
     </footer>
@@ -226,7 +226,6 @@ define(function(require, exports, module){
 <script src="static/js/config.js"></script>
 <script>
 seajs.use('docs/docs');
-seajs.use('docs/common');
 </script>
 <!-- Duoshuo Comment BEGIN -->
 <script type="text/javascript">
