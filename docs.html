@@ -152,6 +152,11 @@ define(function(require, exports, module){
                     </ul>
                 </div>
 
+                <div class="demo qm-doces-section">
+                    <h1>Demo</h1>
+                    <p>git地址<code>$G:qmodular</code> </p>
+                </div>
+
                 <div class="other-docs qm-docs-section"> 
                     <h1 class="section-header" id="other-docs">
                        其它文档
@@ -212,6 +217,7 @@ define(function(require, exports, module){
             <!-- /right col -->
         </div> <!--end row-->
     </div><!--end docs-->
+    <div class="ds-thread"></div>
     <footer id="footer">
         <p>Copyright©2014 Qihoo and other contributors</p>
     </footer>
@@ -220,6 +226,20 @@ define(function(require, exports, module){
 <script src="static/js/config.js"></script>
 <script>
 seajs.use('docs/docs');
+seajs.use('docs/common');
 </script>
+<!-- Duoshuo Comment BEGIN -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"qmoduar"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = 'http://static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+        || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+<!-- Duoshuo Comment END -->
 </body>
 </html>
