@@ -15,7 +15,7 @@ a:hover, a:focus {
 	margin-top: 20px;
 	border-top: 1px solid #ccc;
 }
-.glyphicon {font-size: 24px;}
+.glyphicon {font-size: 16px; margin-right: 5px;}
 .qm-notify {
   background: #eee;
   padding: 20px;
