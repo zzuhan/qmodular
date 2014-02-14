@@ -1,4 +1,5 @@
 define(function (require, exports, module) {
+    // 测试一段中文
 	require('./common');
 
 	log('I am the docs page');
@@ -8,7 +9,7 @@ define(function (require, exports, module) {
         offset: {
         	top: 100,
             bottom: function () {
-                return $('#footer').outerHeight() + $('#ds-thread').outerHeight();
+                return $('#footer').outerHeight() + $('#ds-thread').outerHeight() + 100;
             }
         }   
     });

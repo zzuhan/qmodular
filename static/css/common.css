@@ -15,3 +15,24 @@ a:hover, a:focus {
 	margin-top: 20px;
 	border-top: 1px solid #ccc;
 }
+.glyphicon {font-size: 24px;}
+.qm-notify {
+  background: #eee;
+  padding: 20px;
+  margin: 20px 0;
+  border-left: 3px solid #888;
+}
+.qm-notify-info {
+  background-color: #f4f8fa;
+  border-color: #5bc0de;
+}
+.qm-notify-info h4 {
+  color: #5bc0de;
+}
+.qm-notify-warning {
+	background-color: #fcf8f2;
+	border-color: #f0ad4e;
+}
+.qm-notify-warning h4 {
+	color: #f0ad4e;
+}
