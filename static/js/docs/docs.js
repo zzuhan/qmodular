@@ -19,4 +19,9 @@ define(function (require, exports, module) {
 
     require('common/pretty-code');
     prettyPrint();
+
+    require('common/tooltip');
+    $('#other-docs').closest('.qm-docs-section').find('a').tooltip({placement: 'right'});
+    $('[data-toggle="tooltip"]').tooltip();
+    
 });
