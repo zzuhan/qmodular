@@ -142,7 +142,23 @@ define(function(require, exports, module){
                             <p><code>f8</code>选择发布qstatic，余下就交给qstatic和其中的qmodular来处理了</p>
                         </li>
                     </ol>
+                    <!-- how to write module -->
+                    <h3 id="module-pattern">模块书写</h3>
+
+                    <p>seajs的支持三种匿名模块书写方式。<code>字符串</code>，<code>对象</code>，<code>函数</code>。<a href="https://github.com/seajs/seajs/issues/242">官方文档</a></p>
+                    <pre class="prettyprint">
+                        <code>
+define('str pattern'); // string 
+define({key: 'object pattern'}); // object 
+define(function(require, exports, module){ // function
+    console.log('A function pattern');
+});
+                        </code>
+                    </pre>
+
+
                 </div> 
+                
 
                 <div class="best-practice qm-docs-section">
                     <h1 class="section-header" id="best-practice">最佳实践</h1> 
