@@ -30,10 +30,14 @@
                
                 <div class="why qm-docs-section">
                     <h1 class="section-header" id="why">为什么使用</h1> 
-                    <p>随着前端功能，效果越来越复杂，代码越来越重，
+                    <p>随着前端功能越，效果越来越复杂，代码越来越重，
                     实现模块化，已成必然趋势</p>
-                    <p>很好的解决了过去js文件间复杂的依赖关系</p>
-                    <p>seajs的打包问题，是一个难题，但是我们解决了</p>
+                    <p>我们解决了：</p>
+                    <ul>
+                        <li>js文件间复杂的依赖关系</li>
+                        <li>多人协作命名冲突</li>
+                        <li>Seajs打包难题</li>
+                    </ul>
                 </div>
 
                 <div class="howto qm-docs-section">
@@ -60,7 +64,7 @@
                             </pre>
                         </li> 
                         <li>
-                            <p>ngix配置约定：即可以通过<code>http://domain/js/path/to/file</code>这样访问</p>
+                            <p>ngix配置约定：即可以通过<code>http://domain/js/path/to/file</code>这样访问。（现在项目很多都是这样做的）</p>
                             <p>如：<code>http://www.qmodular.org/js/common/jquery.scrollup.js</code>访问上面例子中的qload文件</p>
                             <pre class="prettyprint linenums">
                                 <code>
@@ -106,22 +110,16 @@ define(function(require, exports, module) {
                             <p>跟过去一致的无差别引入静床，在拦截器实例化静床</p> 
                         </li>
                         <li>
-                            <p>页面模板中，在模块化使用之前，加载模块化配置文件</p>
-                            <p><pre class="prettyprint"><code>$qstatic->addModularConf();</code></pre></p>
+                            <p>页面模板中，在模块化使用之前，加载seajs库，以及模块化配置文件</p>
+                            <p><pre class="prettyprint"><code>
+// script.html                             
+&lt;script src="http://s0.qhimg.com/lib/sea/sea211.js"&gt;&lt;/script&gt;
+$qstatic->addModularConf();
+                            </code></pre></p>
                         </li>
                         <li>
-                            <p>编写启动文件，加载启动模块(跟正常使用seajs一致)</p>
-                            <p>
-                                <pre class="prettyprint">
-                                    <code>
-// index.html
-&lt;script&gt;
-    seajs.use('doc/index');
-&lt;/script&gt;
-                                    </code>
-                                </pre>
-                            </p>
-                            <p>
+                            <p>编写启动模块，加载启动模块(跟正常使用seajs一致)</p>
+                              <p>
                                 <pre class="prettyprint">
                                     <code>
 // filepath static/js/docs/index.js
@@ -133,6 +131,16 @@ define(function(require, exports, module){
     var log = require('common/log');
     log("I'm the qmodular index");
 });
+                                    </code>
+                                </pre>
+                            </p>
+                            <p>
+                                <pre class="prettyprint">
+                                    <code>
+// index.html
+&lt;script&gt;
+    seajs.use('doc/index');
+&lt;/script&gt;
                                     </code>
                                 </pre>
                             </p>
@@ -254,8 +262,12 @@ var contacts = [
                         <li><a href="https://github.com/spmjs/spm/wiki/package.json-:-output">Spm build核心output配置</a></li>
                     </ul>
                 </div>
-            </div>
-            <!-- /left col-->
+
+                <div class="qm-docs-section">
+                    <h1 id="developers">开发者</h1>
+                </div>
+            </div> <!-- /left col-->
+           
             <!-- right col -->
             <div class="col-md-3">
                 <div id="qm-docs-nav" class="qm-sidebar bs-sidebar">
